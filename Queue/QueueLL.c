@@ -52,6 +52,6 @@ int main(){
     enqueue(3);
     enqueue(4);
     enqueue(6);
-    dequeue();
+ 
     display();
 }
