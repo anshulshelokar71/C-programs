@@ -1,0 +1,242 @@
+MIS : 612203163
+
+NAME : ANSHUL UMESH SHELOKAR
+
+DIVISION : 2
+---------------------------------------------------------------------------------------------------------
+Q1 Solution-
+
+#include<stdio.h>
+#include<math.h>
+int main(){
+	int i;
+	long int li;
+	short int si;
+	double d;
+	float f;
+	char c;
+	printf("%lu \n",sizeof(i));
+	printf("%lu \n",sizeof(li));
+	printf("%lu \n",sizeof(si));
+	printf("%lu \n",sizeof(d));
+	printf("%lu \n",sizeof(f));
+	printf("%lu \n",sizeof(c));
+	
+	return 0;
+}
+
+Output:
+4 
+8 
+2 
+8 
+4 
+1
+
+------------------------------------------------------------------------------------------------------------
+
+Q2 Solution-
+
+#include<stdio.h>
+#include<math.h>
+int main(){
+	int a,b,c;
+	printf("Enter 3 numbers :");
+	scanf("%d %d %d", &a,&b,&c);
+	(a>b&&a>c) ? printf("%d is largest among three numbers \n",a) : 
+	(b>a&&b>c) ? printf("%d is largest among three numbers \n",b) :
+	(c>a&&c>b) ? printf("%d is largest among three numbers \n",c): printf("All numbers are equal \n");
+
+	return 0;
+}
+
+Output:
+Enter 3 numbers :24 37 84
+84 is largest among three numbers 
+
+----------------------------------------------------------------------------------------------------------------
+
+Q3 Solution-
+----------------Using If-else statement------------------------------------------------------------------------- 
+#include<stdio.h>
+#include<math.h>
+int main(){
+	char alph;
+	printf("Enter an alphabet :");
+	scanf("%c", &alph);
+	if(alph=='a'||alph=='e'||alph=='i'||alph=='o'||alph=='u'||
+	   alph=='A'||alph=='E'||alph=='I'||alph=='O'||alph=='U'
+	){
+		printf("Given alphabet is an vowel!!!");
+	}else{
+		printf("Given alphabet is a consonant!!!");
+	}
+	
+
+	return 0;
+}------------------using switch statement------------------------------------------------------------------
+
+#include<stdio.h>
+#include<math.h>
+int main(){
+	char alph;
+	printf("Enter an alphabet :");
+	scanf("%c", &alph);
+	switch(alph){
+		case 'a': 
+			printf("Given alphabet is an vowel!!!");
+			break;
+		
+		case 'e': 
+			printf("Given alphabet is an vowel!!!");
+			break;
+		case 'i': 
+			printf("Given alphabet is an vowel!!!");
+			break;
+		case 'o': 
+			printf("Given alphabet is an vowel!!!");
+			break;
+		case 'u': 
+			printf("Given alphabet is an vowel!!!");
+			break;
+		case 'A': 
+			printf("Given alphabet is an vowel!!!");
+			break;
+		
+		case 'E': 
+			printf("Given alphabet is an vowel!!!");
+			break;
+		case 'I': 
+			printf("Given alphabet is an vowel!!!");
+			break;
+		case 'O': 
+			printf("Given alphabet is an vowel!!!");
+			break;
+		case 'U': 
+			printf("Given alphabet is an vowel!!!");
+			break;
+		default : printf("Given alphabet is a consonant!!!");
+	}
+		
+
+	return 0;
+}
+Output:
+Enter an alphabet :e
+Given alphabet is an vowel!!!
+
+-----------------------------------------------------------------------------------------
+
+Q4 Solution-
+
+
+#include<stdio.h>
+#include<math.h>
+int main(){
+	int baseSal;
+	float DA;
+	printf("Input Base Salary : ");
+	scanf("%d",&baseSal);
+	if(baseSal>=10000 && baseSal<=20000){
+		DA = 0.1*baseSal;
+	}else if(baseSal>20000 && baseSal<=50000){
+		DA = 0.15*baseSal;
+	}else if(baseSal>50000 && baseSal<=100000){
+		DA = 0.2*baseSal;
+	}
+	printf("DA = %f \n",DA);
+
+
+	return 0;
+}
+
+Output:
+Input Base Salary : 20000
+DA = 2000.000000 
+
+----------------------------------------------------------------------------------------
+
+Q5 Solution-
+
+#include<stdio.h>
+#include<math.h>
+int main(){
+	int dn;
+	printf("Enter a number :");
+	scanf("%d", &dn);
+	printf("Day corresponding to %d is :",dn);
+	switch(dn){
+		case 1: 
+			printf("Monday \n");
+			break;
+		
+		case 2: 
+			printf("Tuesday \n");
+			break;
+		case 3: 
+			printf("Wednesday \n");
+			break;
+		case 4: 
+			printf("Thursday \n");
+			break;
+		case 5: 
+			printf("Friday \n");
+			break;
+		case 6 : 
+			printf("Saturday \n");
+			break;
+		case 7: 
+			printf("Sunday \n");
+			
+	}
+
+	return 0;
+}
+
+Output:
+Enter a number :6
+Day corresponding to 6 is :Saturday 
+
+-------------------------------------------------------------------------------------------
+
+Q6 Solution-
+
+#include<stdio.h>
+#include<math.h>
+int main(){
+	int radius;
+	float area,circum;
+	const float pi = 3.14;
+	printf("Enter the radius of circle : ");
+	scanf("%d",&radius);
+	area = pi*radius*radius;
+	circum = 2*pi*radius;
+	printf("Area and Circumference of circle are %f sq.units & %f units respectively \n",area,circum);
+
+	return 0;
+}
+
+Output:
+Enter the radius of circle : 7
+Area and Circumference of circle are 153.860016 sq.units & 43.960003 units respectively 
+
+---------------------------------------------------------------------------------------------
+
+Q7 Solution-
+
+#include<stdio.h>
+#include<math.h>
+int main(){
+	float cel,fah;
+	printf("Enter temperature in Fahrenheit : ");
+	scanf("%f",&fah);
+	cel = (5.0 / 9)*(fah-32);
+	printf("Temperature in Celsius is %f C \n",cel);
+
+	return 0;
+}
+
+Output:
+Enter temperature in Fahrenheit : 97
+Temperature in Celsius is 36.111111 C 
+

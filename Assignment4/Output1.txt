@@ -1,0 +1,19 @@
+************MAIN MENU*****************
+1.Read the distances
+2.Display the distances
+3.Add the distances
+4.Subtract the distances
+5.EXIT
+Enter your choice: 1
+Enter the first distance in kms and meters:3 400
+Enter the second distance in kms and meters:5 900
+Enter your choice: 2
+First distance is 3 km 400 meters
+Second distance is 5 km 900 meters
+Enter your choice: 3
+The sum of two distances is: 9 kms 300 meters
+Enter your choice: 4
+The difference of two distances is: 2 kms 500 meters
+Enter your choice: 5
+Exited Successfully!!!
+

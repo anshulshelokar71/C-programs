@@ -1,0 +1,71 @@
+Enter the information of student 1 :
+Enter the roll number :21
+Enter Name of student:Anshul Umesh Shelokar       
+Enter Date of Birth of student:02 02 2004
+Enter marks of 3 subjects:(Eng,Math and CS)20 19 18
+Enter the information of student 2 :
+Enter the roll number :22 
+Enter Name of student:Yash Ramesh Pawar
+Enter Date of Birth of student:05 10 2004
+Enter marks of 3 subjects:(Eng,Math and CS)20 17 14
+Enter the information of student 3 :
+Enter the roll number :23
+Enter Name of student:Paras Sharad Dhole
+Enter Date of Birth of student:23 06 2004
+Enter marks of 3 subjects:(Eng,Math and CS)18 20 19
+Enter the information of student 4 :
+Enter the roll number :24
+Enter Name of student:Tejas V Kolhe
+Enter Date of Birth of student:05 05 2004
+Enter marks of 3 subjects:(Eng,Math and CS)20 20 20
+Enter the information of student 5 :
+Enter the roll number :25
+Enter Name of student:Aryan A Patil
+Enter Date of Birth of student:25 12 2004
+Enter marks of 3 subjects:(Eng,Math and CS)15 17 19
+Information of student 1 :
+Roll number : 21
+Name: Anshul Umesh Shelokar
+Date of Birth: 2 2 2004
+Marks of 3 subjects:(Eng,Math and CS): 
+20 
+19 
+18 
+Average marks : 19.000000
+Information of student 2 :
+Roll number : 22
+Name: Yash Ramesh Pawar
+Date of Birth: 5 10 2004
+Marks of 3 subjects:(Eng,Math and CS): 
+20 
+17 
+14 
+Average marks : 17.000000
+Information of student 3 :
+Roll number : 23
+Name: Paras Sharad Dhole
+Date of Birth: 23 6 2004
+Marks of 3 subjects:(Eng,Math and CS): 
+18 
+20 
+19 
+Average marks : 19.000000
+Information of student 4 :
+Roll number : 24
+Name: Tejas V Kolhe
+Date of Birth: 5 5 2004
+Marks of 3 subjects:(Eng,Math and CS): 
+20 
+20 
+20 
+Average marks : 20.000000
+Information of student 5 :
+Roll number : 25
+Name: Aryan A Patil
+Date of Birth: 25 12 2004
+Marks of 3 subjects:(Eng,Math and CS): 
+15 
+17 
+19 
+Average marks : 17.000000
+
