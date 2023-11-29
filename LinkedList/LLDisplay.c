@@ -8,13 +8,13 @@ struct Node
     struct Node *next;
 } *head = NULL,*second=NULL,*third=NULL,*last=NULL;
 
-void create(int arr[], int n)
+struct Node* create(int arr[], int n)
 {
-    struct Node *t, *last;
-    head = (struct Node *)malloc(sizeof(struct Node));
-    last = head;
-    head->data = arr[0];
-    head->next = NULL;
+    struct Node *t, *last,*q1;
+    q1 = (struct Node *)malloc(sizeof(struct Node));
+    last = q1;
+    q1->data = arr[0];
+    q1->next = NULL;
     for (int i = 1; i < n; i++)
     {
         t = (struct Node *)malloc(sizeof(struct Node));
@@ -23,6 +23,7 @@ void create(int arr[], int n)
         last->next = t;
         last = t;
     }
+    return q1;
 }
 
 void create2(int arr[], int n)
@@ -393,7 +394,9 @@ int main()
     struct Node *t1,*t2;
     int arr[] = {10,20,35,47,64};
     // int arr2[] = {23,46,55,97,103};
-    create(arr,5);
+    t1=create(arr,5);
+    Insert(t1,1,29);
+    
     // t1=head->next->next;
     // t2=head->next->next->next->next;
     // t2->next=t1;
@@ -415,8 +418,8 @@ int main()
     // InsertLast(head, 16);
     // InsertLast(head, 17);
     // InsertLast(head, 47);
-    printf("%d",isLoop(head));
-    // Display(head);
+    // printf("%d",isLoop(head));
+    Display(t1);
     // Display(second);
     // Display(third);
     return 0;

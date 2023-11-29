@@ -28,11 +28,12 @@ void create(int A[], int n)
 
 void Display(Node *h)
 {
+    Node*p=h;
     do
     {
-        printf("%d ", h->data);
-        h = h->next;
-    } while (h != Head);
+        printf("%d ", p->data);
+        p = p->next;
+    } while (p != h);
     printf("\n");
 }
 
