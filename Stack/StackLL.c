@@ -7,7 +7,7 @@ struct Node
     struct Node *next;
 } *top = NULL;
 
-void push(char x)
+void push(int x)
 {
     struct Node *t;
     t = (struct Node *)malloc(sizeof(struct Node));
@@ -72,7 +72,7 @@ void Display()
     p = top;
     while (p != NULL)
     {
-        printf("%s ", p->data);
+        printf("%d ", p->data);
         p = p->next;
     }
     printf("\n");
@@ -101,7 +101,10 @@ int isBalance(char *exp){
 }
 int main()
 {
-    char *exp = "(((a+b)*(c-d)))";
-    printf("%d ",isBalance(exp));
+    // char *exp = "(((a+b)*(c-d)))";
+    // printf("%d ",isBalance(exp));
+    push(3);
+    push(4);
+    Display();
     return 0;
 }
