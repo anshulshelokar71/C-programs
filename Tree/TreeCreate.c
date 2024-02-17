@@ -1,4 +1,4 @@
-#include"queue.h"
+#include"stack.h"
 
 Node *root=NULL;
 
@@ -60,9 +60,26 @@ void Inorder(Node *p){
     }
 }
 
+void IPreorder(Node *p){
+    struct stack st;
+    Node *t;
+    createStack(&st,100);
+    while(p || !isEmptyStack(st)){
+        if(p!=NULL){
+            printf("%d",p->data);
+            push(&st,p);
+            p=p->lchild;
+        }else{
+            p = pop(&st);
+            p=p->rchild;
+        }
+    }
+}
+
+
 int main(){
 
     TreeCreate();
-    preorder(root);
+    IPreorder(root);
     return 0;
 }
