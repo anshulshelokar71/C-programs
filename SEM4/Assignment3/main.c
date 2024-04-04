@@ -1,18 +1,20 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include"stack.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "stack.h"
 
-typedef struct Node{
-    char data;
-    struct Node*left,*right;
-}Node;
 
-int prec(char c){
-    if(c=='+'||c=='-'){
+int prec(char c)
+{
+    if (c == '+' || c == '-')
+    {
         return 2;
-    }else if(c=='*'||c=='/'){
+    }
+    else if (c == '*' || c == '/')
+    {
         return 3;
-    }else if(c=='('){
+    }
+    else if (c == '(')
+    {
         return 1;
     }
     return 0;
@@ -26,70 +28,80 @@ Node *CreateNode(char c)
     return t;
 }
 
-Node* insertNode(Node *n, char c,int x)
+Node *ExpressionTree(char s[])
 {
-    Node *t, *p;
-    p = n;
-    t = CreateNode(c);
-    if (n == NULL)
+    // Node *root=NULL;
+    stack st1;
+    stack1 st2;
+    create(&st1, 100);
+    create1(&st2, 100);
+    Node *t, *t1, *t2;
+    int i = 0;
+    while (s[i] != '\0')
     {
-        n = t;
-        return n;
-    }
-    Node *prev=n;
-   
-    if (x==1)
-    {
-        prev->right = t;
-    }
-    else if (x==0)
-    {
-        prev->left = t;
-    }
-    return prev;
-}
+        if (s[i] == '(')
+        {
+            push(&st1, s[i]);
+        }
 
+        else if (s[i]!=')'&& (prec(s[i]) == 0))
+        {
+           
+            t = CreateNode(s[i]);
+            push1(&st2, t);
+        }
+        else if (s[i] == '+' || s[i] == '*' || s[i] == '/' || s[i] == '-')
+        {
+            while (!isEmpty(st1) && stackTop(st1) != '(' && (prec(stackTop(st1)) >= prec(s[i])))
+            {
+                t = CreateNode(stackTop(st1));
 
-Node *ExpressionTree(char s[]){
-    Node *root=NULL;
-    stack st1,st2;
-    create(&st1,100);
-    create(&st2,100);
-    int i=0;
-    while(s[i]!='\0'){
-        if(s[i]=='+'||s[i]=='*'||s[i]=='/'||s[i]=='-'||s[i]=='('||s[i]==')'){
-            if(prec(s[i])<prec(stackTop(st1))){
-                char c = pop(&st1);
-                root=insertNode(root,c,1);
-                c = pop(&st2);
-                root=insertNode(root,c,1);
-                char b = pop(&st2);
-                root = insertNode(root,b,0);
-                Node*p=root;
-                push(&st2,p);
-            }else{
-                push(&st1,s[i++]);
+                t1 = pop1(&st2);
+
+                t2 = pop1(&st2);
+
+                t->left = t2;
+                t->right = t1;
+
+                push1(&st2, t);
             }
-        }else{
-            push(&st2,s[i++]);
+
+            push(&st1, s[i]);
         }
+        else if (s[i] == ')')
+        {
+            while (!isEmpty(st1) && stackTop(st1) != '(')
+            {
+                t = CreateNode(stackTop(st1));
+                pop(&st1);
+                t1 = stackTop1(st2);
+                pop1(&st2);
+                t2 = stackTop1(st2);
+                pop1(&st2);
+                t->left=t2;
+                t->right=t1;
+                push1(&st2,t);
+            }
+            pop(&st1);
+        }
+        i++;
+    }
+    t = stackTop1(st2);
+    return t;
+}
+
+void Inorder(Node *n){
+    if(n){
+        Inorder(n->left);
+        printf("%c ",n->data);
+        Inorder(n->right);
     }
 }
 
-int main(){
-    char s[]="(1+2)";
-    stack st1,st2;
-    create(&st1,100);
-    create(&st2,100);
-    int i=0;
-    while(s[i]!='\0'){
-        if(s[i]=='+'||s[i]=='*'||s[i]=='/'||s[i]=='-'||s[i]=='('||s[i]==')'){
-            push(&st1,s[i++]);
-        }else{
-            push(&st2,s[i++]);
-        }
-    }
-    Display(st1);
-    Display(st2);
+int main()
+{
+    char s[] = "(1+4)";
+    Node *root=ExpressionTree(s);
+    Inorder(root);
     return 0;
 }
